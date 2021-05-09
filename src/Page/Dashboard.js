@@ -65,7 +65,7 @@ export default function App() {
                 <Menubar />
             </Col>
             <Col flex='auto' style={{ backgroundColor: '#F5F5F5' }}>
-                <Card>
+                <Card style={{width: 'fit-content'}}>
                     
                 <div
                     style={{

@@ -9,8 +9,6 @@ import {
 import { CheckCircleOutlined,CloseCircleOutlined } from '@ant-design/icons';
 
 
-const { Header } = Layout;
-
 const Register = () => {
     const [componentSize, setComponentSize] = useState('default');
 
@@ -20,9 +18,6 @@ const Register = () => {
 
     return (
         <>
-            <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-                <h2 style={{ color: 'White' }}>Internal Dashboard</h2>
-            </Header>
             <Form
             style={{paddingTop: '200px'}}
                 labelCol={{

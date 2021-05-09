@@ -32,36 +32,39 @@ class Menubar extends React.Component {
                 <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
                         <SubMenu style={{ paddingTop: '64px' }} key="sub1" icon={<RocketFilled style={{ fontSize: '20px', color: '#088c' }} />} title="BUCR">
-                            <Menu.Item key="1" icon={<PieChartOutlined />}>
+                            <Menu.Item key="Bucr-1" icon={<PieChartOutlined />}>
                                 Dashboard
                             </Menu.Item>
-                            <Menu.Item key="2" icon={<DesktopOutlined />}>
-                                Report
+                            <Menu.Item key="Bucr-2" icon={<DesktopOutlined />}>
+                                Tasks
                             </Menu.Item>
-                            <Menu.Item key="3" icon={<AuditOutlined />}>
+                            <Menu.Item key="Bucr-3" icon={<AuditOutlined />}>
                                 Quotation
                                 </Menu.Item>
-                            <Menu.Item key="4" icon={<UnorderedListOutlined />}>
+                            <Menu.Item key="Bucr-4" icon={<UnorderedListOutlined />}>
                                 Purchase Order
                                 </Menu.Item>
-                            <Menu.Item key="5" icon={<MehOutlined />}>
+                            <Menu.Item key="Bucr-5" icon={<MehOutlined />}>
                                 Client
                                 </Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" icon={<TeamOutlined style={{ fontSize: '20px', color: '#FF6076' }} />} title="OP">
-                            <Menu.Item key="1" icon={<PieChartOutlined />}>
+                            <Menu.Item key="Op-1" icon={<PieChartOutlined />}>
                                 Dashboard
                             </Menu.Item>
-                            <Menu.Item key="2" icon={<DesktopOutlined />}>
-                                Report
+                            <Menu.Item key="Op-2" icon={<DesktopOutlined />}>
+                                Tasks
                             </Menu.Item>
-                            <Menu.Item key="6" icon={<AuditOutlined />}>
+                            <Menu.Item key="Op-3" icon={<AuditOutlined />}>
                                 Quotation
                             </Menu.Item>
+                            <Menu.Item key="Op-4" icon={<MehOutlined />}>
+                                Client
+                                </Menu.Item>
+                            <Menu.Item key="Op-5" icon={<MehOutlined />}>
+                                Agent
+                                </Menu.Item>
                         </SubMenu>
-                        <Menu.Item key="9" icon={<FileOutlined />}>
-                            Files
-                        </Menu.Item>
                     </Menu>
                 </Sider>
             </Layout>

@@ -10,6 +10,7 @@ const { Header } = Layout;
 class HeaderMenu extends React.Component {
   state = {
     collapsed: false,
+    isLogin: false
   };
 
   onCollapse = collapsed => {
@@ -17,16 +18,16 @@ class HeaderMenu extends React.Component {
     this.setState({ collapsed });
   };
 
-  render(isLogin=false) {
+  render() {
     return (
       <>
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
           <Row justify='space-between'>
             <h2 style={{ color: 'White' }}>Internal Dashboard</h2>
             <Menu theme="dark" style={{ height: '64px' }} mode='horizontal'>
-              {isLogin ?
+            {/* render(isLogin=false) {isLogin ? */} 
                 <Button style={{ marginRight: '10px' }} type="primary" shape="round" icon={<LogoutOutlined />} size={'large'} href="/">log out</Button>
-                : null}
+                {/* : null} */}
               {/* <Button type="primary" shape="round" icon={<UserOutlined />} size={'large'}>register</Button> */}
             </Menu>
           </Row>
