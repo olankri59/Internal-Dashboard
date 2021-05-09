@@ -34,9 +34,6 @@ const index = () => {
 
     return (
         <>
-            {/* <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-                <h2 style={{ color: 'White' }}>Internal Dashboard</h2>
-            </Header> */}
             <Form
                 {...layout}
                 name="basic"
