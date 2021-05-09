@@ -19,25 +19,25 @@ export default function App() {
             {
                 label: 'Series 1',
                 data: [
-                    { primary: 1, secondary: 10 },
-                    { primary: 2, secondary: 15 },
+                    { primary: 1, secondary: 1 },
+                    { primary: 2, secondary: 10 },
                     { primary: 3, secondary: 7 },
-                ],
-            },
-            {
-                label: 'Series 2',
-                data: [
-                    { primary: 1, secondary: 9 },
-                    { primary: 2, secondary: 15 },
-                    { primary: 3, secondary: 20 },
-                ],
-            },
-            {
-                label: 'Series 3',
-                data: [
-                    { primary: 1, secondary: 10 },
-                    { primary: 2, secondary: 15 },
-                    { primary: 3, secondary: 18 },
+            //     ],
+            // },
+            // {
+            //     label: 'Series 2',
+            //     data: [
+            //         { primary: 1, secondary: 9 },
+            //         { primary: 2, secondary: 15 },
+            //         { primary: 3, secondary: 20 },
+            //     ],
+            // },
+            // {
+            //     label: 'Series 3',
+            //     data: [
+            //         { primary: 1, secondary: 10 },
+            //         { primary: 2, secondary: 15 },
+            //         { primary: 3, secondary: 18 },
                 ],
             },
         ],
@@ -64,7 +64,7 @@ export default function App() {
             <Col flex='200px'>
                 <Menubar />
             </Col>
-            <Col flex='auto' style={{ backgroundColor: '#F5F5F5' }}>
+            <Col flex='auto' style={{ backgroundColor: '#F5F5F5', padding: '10px 10px 10px 10px'}}>
                 <Card style={{width: 'fit-content'}}>
                     
                 <div
@@ -79,8 +79,6 @@ export default function App() {
                     </Card>
             </Col>
         </Row>
+        
     );
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);

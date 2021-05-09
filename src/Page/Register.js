@@ -3,7 +3,6 @@ import {
     Form,
     Input,
     Radio,
-    Layout,
     Button
 } from 'antd';
 import { CheckCircleOutlined,CloseCircleOutlined } from '@ant-design/icons';
