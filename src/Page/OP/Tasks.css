@@ -1,0 +1,13 @@
+.tasks-page {
+    padding: 40px;
+    height: calc(100vh - 64px);
+}
+
+.search-container {
+    padding-bottom: 20px;
+}
+
+.title-card {
+    font-weight: bold;
+    color: black;
+}

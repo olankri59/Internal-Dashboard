@@ -10,6 +10,8 @@ import {
     MehOutlined
 } from '@ant-design/icons';
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 const { Sider } = Layout;
@@ -28,42 +30,43 @@ class Menubar extends React.Component {
     render() {
         const { collapsed } = this.state;
         return (
-            <Layout style={{ minHeight: '100vh', width: '200px' }} >
+            <Layout style={{ minHeight: '100vh', width: '200px', position: 'fixed' }} >
                 <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
                         <SubMenu style={{ paddingTop: '64px' }} key="sub1" icon={<RocketFilled style={{ fontSize: '20px', color: '#088c' }} />} title="BUCR">
-                            <Menu.Item key="Bucr-1" icon={<PieChartOutlined />}>
-                                Dashboard
+                            <Menu.Item key="BUCR_1" icon={<PieChartOutlined />}>
+                                <Link to={'/BUCR/Dashboard'} >Dashboard</Link>
                             </Menu.Item>
-                            <Menu.Item key="Bucr-2" icon={<DesktopOutlined />}>
-                                Tasks
+                            <Menu.Item key="BUCR_2" icon={<DesktopOutlined />}>
+                                <Link to={'/BUCR/Tasks'} >Tasks</Link>
                             </Menu.Item>
-                            <Menu.Item key="Bucr-3" icon={<AuditOutlined />}>
+                            <Menu.Item key="BUCR_3" icon={<AuditOutlined />}>
                                 Quotation
                                 </Menu.Item>
-                            <Menu.Item key="Bucr-4" icon={<UnorderedListOutlined />}>
+                            <Menu.Item key="BUCR_4" icon={<UnorderedListOutlined />}>
                                 Purchase Order
                                 </Menu.Item>
-                            <Menu.Item key="Bucr-5" icon={<MehOutlined />}>
+                            <Menu.Item key="BUCR_5" icon={<MehOutlined />}>
                                 Client
                                 </Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" icon={<TeamOutlined style={{ fontSize: '20px', color: '#FF6076' }} />} title="OP">
-                            <Menu.Item key="Op-1" icon={<PieChartOutlined />}>
-                                Dashboard
+                            <Menu.Item key="OP_1" icon={<PieChartOutlined />}>
+                                <Link to={'/OP/Dashboard'} >Dashboard</Link>
                             </Menu.Item>
-                            <Menu.Item key="Op-2" icon={<DesktopOutlined />}>
-                                Tasks
+                            <Menu.Item key="OP_2" icon={<DesktopOutlined />}>
+                                <Link to={'/OP/Tasks'} >Tasks</Link>
+
                             </Menu.Item>
-                            <Menu.Item key="Op-3" icon={<AuditOutlined />}>
+                            <Menu.Item key="OP_3" icon={<AuditOutlined />}>
                                 Quotation
                             </Menu.Item>
-                            <Menu.Item key="Op-4" icon={<MehOutlined />}>
+                            <Menu.Item key="OP_4" icon={<AuditOutlined />}>
                                 Client
-                                </Menu.Item>
-                            <Menu.Item key="Op-5" icon={<MehOutlined />}>
+                            </Menu.Item>
+                            <Menu.Item key="OP_5" icon={<AuditOutlined />}>
                                 Agent
-                                </Menu.Item>
+                            </Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>

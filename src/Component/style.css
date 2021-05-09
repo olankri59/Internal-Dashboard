@@ -25,3 +25,12 @@
     color: black !important;
     background-color: white !important;
 } */
+
+.table-container{
+    overflow: auto;
+}
+
+.table-container-dashboard {
+    overflow: auto;
+    height: 270px;
+}
