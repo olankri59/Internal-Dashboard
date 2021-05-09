@@ -1,6 +1,6 @@
 import { Layout, Menu, Row } from 'antd';
 import React from 'react'
-import './Header.css'
+import './style.css'
 import { Button } from 'antd';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 

@@ -1,7 +1,6 @@
 import { Layout, Breadcrumb } from 'antd';
 import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 import React from 'react'
-import './Breadcrumb.css'
 
 
 const { Content } = Layout;
