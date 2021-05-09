@@ -1,0 +1,36 @@
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+.ant-btn:not([disabled]):hover {
+    text-decoration: none;
+    background-color: black;
+}
+
+/* .ant-menu-vertical .ant-menu-item {
+    margin-top: 0px !important;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+    color: black !important;
+    background-color: white !important;
+}
+
+.ant-menu-dark.ant-menu-horizontal>.ant-menu-item:hover {
+    color: black !important;
+    background-color: white !important;
+} */
+
+.table-container{
+    overflow: auto;
+}
+
+.table-container-dashboard {
+    overflow: auto;
+    height: 270px;
+}
