@@ -43,21 +43,29 @@ const data = [
         phone: '098765555',
         email: 'acc@gmail.com'
     },
+    {
+        no: 6,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
 ]
+
+const { RangePicker } = DatePicker;
 
 const Tasks = () => {
     return (
         <div className='tasks-page'>
             <Row className="search-container" gutter={20}>
                 <Col>
-                    <DatePicker />
+                    <RangePicker />
                 </Col>
                 <Col>
                     <Select
                         style={{ width: '150px' }}
                         placeholder='Service'
                         filterOption={(input, option) =>
-                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                            option.toLowerCase().indexOf(input.toLowerCase()) >= 0
                         }
                     >
                         <Option key="service_1" value="1">ล้างแอร์ติดผนัง</Option>

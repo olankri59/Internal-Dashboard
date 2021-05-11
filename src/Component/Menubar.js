@@ -30,7 +30,7 @@ class Menubar extends React.Component {
     render() {
         const { collapsed } = this.state;
         return (
-            <Layout style={{ minHeight: '100vh', width: '200px', position: 'fixed' }} >
+            <Layout style={{ minHeight: '100vh', width: '200px', position: 'fixed', paddingTop: '20px' }} >
                 <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
                         <SubMenu style={{ paddingTop: '64px' }} key="sub1" icon={<RocketFilled style={{ fontSize: '20px', color: '#088c' }} />} title="BUCR">
@@ -41,10 +41,10 @@ class Menubar extends React.Component {
                                 <Link to={'/BUCR/Tasks'} >Tasks</Link>
                             </Menu.Item>
                             <Menu.Item key="BUCR_3" icon={<AuditOutlined />}>
-                                Quotation
+                                <Link to={'/BUCR/Quotation'}>Quotation</Link>
                                 </Menu.Item>
                             <Menu.Item key="BUCR_4" icon={<UnorderedListOutlined />}>
-                                Purchase Order
+                                <Link to={'/BUCR/PurchaseOrder'}>Purchase Order</Link>
                                 </Menu.Item>
                             <Menu.Item key="BUCR_5" icon={<MehOutlined />}>
                                 Client

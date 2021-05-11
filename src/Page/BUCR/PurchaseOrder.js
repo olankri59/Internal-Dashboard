@@ -1,6 +1,6 @@
-import { Card, Row, DatePicker, Select, Col } from "antd";
+import { Card, Row, DatePicker, Select, Col, Pagination } from "antd";
 import React from "react";
-import './Tasks.css';
+import './PurchaseOrder.css';
 import CardTable from '../../Component/CardTable'
 
 const { Option } = Select;
@@ -30,15 +30,53 @@ const data = [
         client: 'AA',
         phone: '098765555',
         email: 'acc@gmail.com'
-    }
+    },
+    {
+        no: 4,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 5,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 6,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 7,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 8,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 9,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
 ]
 
-const Tasks = () => {
+const { RangePicker } = DatePicker;
+
+const Purchase = () => {
     return (
-        <div className='tasks-page'>
+        <div className='Purchase-page'>
             <Row className="search-container" gutter={20}>
                 <Col>
-                    <DatePicker />
+                    <RangePicker />
                 </Col>
                 <Col>
                     <Select
@@ -54,9 +92,10 @@ const Tasks = () => {
                     </Select>
                 </Col>
             </Row>
-            <CardTable title='Tasks' data={data} />
+            <CardTable title='Purchase Order' data={data} />
+            <Pagination defaultCurrent={1} total={50} style={{}}/>
         </div>
     )
 }
 
-export default Tasks
+export default Purchase

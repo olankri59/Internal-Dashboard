@@ -1,6 +1,8 @@
 import { Layout, Row, Card } from 'antd';
 import React from 'react'
 import { RightOutlined } from '@ant-design/icons';
+import QuotationDetail from '../Page/BUCR/QuotationDetail'
+
 
 const { Content } = Layout;
 
@@ -17,7 +19,7 @@ class CardTable extends React.Component {
                                 <Card style={{ marginTop: '10px' }}>
                                     <Row justify='space-between'>
                                         <div className="title-card">{`${this.props.title} ${t.no}#`}</div>
-                                        <a><RightOutlined style={{ color: 'black' }} /></a>
+                                        <a href='QuotationDetail'><RightOutlined style={{ color: 'black' }} /></a>
                                     </Row>
                                 </Card>
                             )

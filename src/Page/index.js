@@ -1,6 +1,6 @@
 import React from 'react'
-import { Form, Input, Button, Checkbox, Layout } from 'antd';
-import { DownloadOutlined,RocketFilled,LoginOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Checkbox, Layout, Row } from 'antd';
+import { DownloadOutlined, RocketFilled, LoginOutlined } from '@ant-design/icons';
 import './index.css'
 import FormItem from 'antd/lib/form/FormItem';
 
@@ -79,16 +79,17 @@ const index = () => {
                     </Button>
                 </Form.Item>
             </Form>
-                <h2 style={{ textAlign: 'center' }}>OR</h2>
-                <FormItem style={{alignItems:'center',justifyContent:'center'}}>                
-                    <Button type="primary" shape="round" icon={<DownloadOutlined />} size={'mid'} href="/Register">
+            <h2 style={{ textAlign: 'center' }}>OR</h2>
+            <Row style={{justifyContent: 'center', padding: '10px'}}>
+            <FormItem style={{ alignItems: 'center'}}>
+                <Button type="primary" shape="round" icon={<DownloadOutlined />} size={'mid'} href="/Register">
                     Register
                 </Button>
-                    <Button type="primary" shape="round" icon={<RocketFilled />} size={'mid'} href="/Dashboard">
+                <Button type="primary" shape="round" icon={<RocketFilled />} size={'mid'} href="/Dashboard">
                     Dashboard
                 </Button>
-                </FormItem>
-
+            </FormItem>
+            </Row>
         </>
     );
 };

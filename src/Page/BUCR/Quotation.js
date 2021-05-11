@@ -1,6 +1,6 @@
 import { Card, Row, DatePicker, Select, Col } from "antd";
 import React from "react";
-import './Tasks.css';
+import './Quotation.css';
 import CardTable from '../../Component/CardTable'
 
 const { Option } = Select;
@@ -30,15 +30,53 @@ const data = [
         client: 'AA',
         phone: '098765555',
         email: 'acc@gmail.com'
-    }
+    },
+    {
+        no: 4,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 5,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 6,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 7,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 8,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 9,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
 ]
 
-const Tasks = () => {
+const { RangePicker } = DatePicker;
+
+const Quotation = () => {
     return (
-        <div className='tasks-page'>
+        <div className='Quotation-page'>
             <Row className="search-container" gutter={20}>
                 <Col>
-                    <DatePicker />
+                    <RangePicker />
                 </Col>
                 <Col>
                     <Select
@@ -54,9 +92,9 @@ const Tasks = () => {
                     </Select>
                 </Col>
             </Row>
-            <CardTable title='Tasks' data={data} />
+            <CardTable title='Quotation' data={data} />
         </div>
     )
 }
 
-export default Tasks
+export default Quotation
