@@ -175,12 +175,12 @@ const Dashboard = () => {
                     </Card>
                 </Col>
                 <Col className="op-task-table">
-                    <CardTable title='Task' data={cilentData} isDashboard={true} />
+                    <CardTable title='Task' data={cilentData} isDashboard={true} path='/OP/Tasks'/>
                 </Col>
             </Row>
             <Row justify='space-around' style={{ padding: '40px' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Clients' data={cilentData} isDashboard={true} />
+                    <CardTable title='Clients' data={cilentData} isDashboard={true}  path='/OP/Quotation'/>
                 </Col>
                 <Col>
                     <Card className="card-container">

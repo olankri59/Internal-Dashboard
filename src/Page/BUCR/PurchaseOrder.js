@@ -93,7 +93,9 @@ const Purchase = () => {
                 </Col>
             </Row>
             <CardTable title='Purchase Order' data={data} />
-            <Pagination defaultCurrent={1} total={50} style={{}}/>
+            <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
+                <Pagination defaultCurrent={1} total={50} />
+            </Row>
         </div>
     )
 }

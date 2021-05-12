@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    Row, Col, Card, DatePicker, Select
+    Row, Col, Card, DatePicker, Select,Button
 } from 'antd';
 import './Dashboard.css'
 import { Chart } from "react-charts";
@@ -195,8 +195,7 @@ const Dashboard = () => {
             </Row>
             <Row justify='space-around' style={{ padding: '40px' }}>
                 <Col className="task-table">
-                    <CardTable title='Tasks' title2='Olan' data={TaskData} isDashboard={true} />
-                    
+                    <CardTable title='Tasks' data={TaskData} isDashboard={true} path='/BUCR/Tasks'/>
                 </Col>
                 <Col>
                     <Card className="card-container">

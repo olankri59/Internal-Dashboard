@@ -1,7 +1,8 @@
-import { Layout, Row, Card } from 'antd';
+import { Layout, Row, Card, Button } from 'antd';
 import React from 'react'
-import { RightOutlined } from '@ant-design/icons';
+import { RightOutlined, LogoutOutlined } from '@ant-design/icons';
 import QuotationDetail from '../Page/BUCR/QuotationDetail'
+import { Link } from 'react-router-dom';
 
 
 const { Content } = Layout;
@@ -12,7 +13,7 @@ class CardTable extends React.Component {
         return (
             <Card>
                 <h1>{this.props.title}</h1>
-                <div className={(this.props.isDashboard)? 'table-container-dashboard': 'table-container'}>
+                <div className={(this.props.isDashboard) ? 'table-container-dashboard' : 'table-container'}>
                     {
                         this.props.data.map((t) => {
                             return (
@@ -26,6 +27,13 @@ class CardTable extends React.Component {
                         })
                     }
                 </div>
+                {
+                (this.props.isDashboard) ?
+                <Row style={{justifyContent: 'flex-end'}} >
+                    <Button href={this.props.path} type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                </Row>
+                : null
+                }
             </Card>
         );
     }

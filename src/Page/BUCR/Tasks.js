@@ -1,4 +1,4 @@
-import { Card, Row, DatePicker, Select, Col } from "antd";
+import { Card, Row, DatePicker, Select, Col, Pagination } from "antd";
 import React from "react";
 import './Tasks.css';
 import CardTable from '../../Component/CardTable'
@@ -75,6 +75,9 @@ const Tasks = () => {
                 </Col>
             </Row>
             <CardTable title='Tasks' data={data} />
+            <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
+                <Pagination defaultCurrent={1} total={50} />
+            </Row>
         </div>
     )
 }

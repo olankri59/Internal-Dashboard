@@ -80,12 +80,12 @@ const index = () => {
                 </Form.Item>
             </Form>
             <h2 style={{ textAlign: 'center' }}>OR</h2>
-            <Row style={{justifyContent: 'center', padding: '10px'}}>
+            <Row style={{justifyContent: 'center'}}>
             <FormItem style={{ alignItems: 'center'}}>
                 <Button type="primary" shape="round" icon={<DownloadOutlined />} size={'mid'} href="/Register">
                     Register
                 </Button>
-                <Button type="primary" shape="round" icon={<RocketFilled />} size={'mid'} href="/Dashboard">
+                <Button type="primary" shape="round" icon={<RocketFilled /> } size={'mid'} href="/Dashboard" style={{marginLeft: '20px'}}>
                     Dashboard
                 </Button>
             </FormItem>
