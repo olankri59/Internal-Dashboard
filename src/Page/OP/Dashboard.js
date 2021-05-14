@@ -180,7 +180,7 @@ const Dashboard = () => {
             </Row>
             <Row justify='space-around' style={{ padding: '40px' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Clients' data={cilentData} isDashboard={true}  path='/OP/Quotation'/>
+                    <CardTable title='Clients' data={cilentData} isDashboard={true}  path='/OP/Client'/>
                 </Col>
                 <Col>
                     <Card className="card-container">

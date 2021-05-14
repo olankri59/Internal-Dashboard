@@ -30,6 +30,54 @@ const data = [
         client: 'AA',
         phone: '098765555',
         email: 'acc@gmail.com'
+    },
+    {
+        no: 4,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 5,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 6,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 7,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 8,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 9,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 10,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
+    },
+    {
+        no: 11,
+        client: 'AA',
+        phone: '098765555',
+        email: 'acc@gmail.com'
     }
 ]
 
@@ -56,7 +104,12 @@ const Tasks = () => {
             </Row>
             <CardTable title='Tasks' data={data} />
             <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
-                <Pagination defaultCurrent={1} total={50} />
+                <Pagination
+                    total={20}
+                    showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+                    defaultPageSize={10}
+                    defaultCurrent={1}
+                />
             </Row>
         </div>
     )

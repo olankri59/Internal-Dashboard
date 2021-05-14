@@ -7,7 +7,9 @@ import {
     RocketFilled,
     UnorderedListOutlined,
     AuditOutlined,
-    MehOutlined
+    MehOutlined,
+    UserOutlined,
+    ToolOutlined
 } from '@ant-design/icons';
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -42,10 +44,10 @@ class Menubar extends React.Component {
                             </Menu.Item>
                             <Menu.Item key="BUCR_3" icon={<AuditOutlined />}>
                                 <Link to={'/BUCR/Quotation'}>Quotation</Link>
-                                </Menu.Item>
+                            </Menu.Item>
                             <Menu.Item key="BUCR_4" icon={<UnorderedListOutlined />}>
                                 <Link to={'/BUCR/PurchaseOrder'}>Purchase Order</Link>
-                                </Menu.Item>
+                            </Menu.Item>
                             <Menu.Item key="BUCR_5" icon={<MehOutlined />}>
                                 Client
                                 </Menu.Item>
@@ -56,15 +58,14 @@ class Menubar extends React.Component {
                             </Menu.Item>
                             <Menu.Item key="OP_2" icon={<DesktopOutlined />}>
                                 <Link to={'/OP/Tasks'} >Tasks</Link>
-
                             </Menu.Item>
                             <Menu.Item key="OP_3" icon={<AuditOutlined />}>
-                                Quotation
+                                <Link to={'/OP/Quotation'}>Quotation</Link>
                             </Menu.Item>
-                            <Menu.Item key="OP_4" icon={<AuditOutlined />}>
+                            <Menu.Item key="OP_4" icon={<UserOutlined />}>
                                 Client
                             </Menu.Item>
-                            <Menu.Item key="OP_5" icon={<AuditOutlined />}>
+                            <Menu.Item key="OP_5" icon={<ToolOutlined />}>
                                 Agent
                             </Menu.Item>
                         </SubMenu>
