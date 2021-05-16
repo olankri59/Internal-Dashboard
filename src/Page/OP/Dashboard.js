@@ -18,7 +18,7 @@ const Dashboard = () => {
                 data: [
                     { primary: 1, secondary: 10 },
                     { primary: 2, secondary: 15 },
-                    { primary: 3, secondary: 7 },
+                    { primary: 3, secondary: 2 },
                 ],
             },
             {
@@ -71,9 +71,9 @@ const Dashboard = () => {
 
     const tasksColumns = [
         {
-            title: 'Jobid',
-            dataIndex: 'Jobid',
-            key: 'Jobid',
+            title: 'JobID',
+            dataIndex: 'JobID',
+            key: 'JobID',
         },
         {
             title: 'client',
@@ -89,9 +89,9 @@ const Dashboard = () => {
 
     const clientColumns = [
         {
-            title: 'Jobid',
-            dataIndex: 'Jobid',
-            key: 'Jobid',
+            title: 'JobID',
+            dataIndex: 'JobID',
+            key: 'JobID',
         },
         {
             title: 'client',
@@ -107,9 +107,9 @@ const Dashboard = () => {
 
     const statusColumns = [
         {
-            title: 'Jobid',
-            dataIndex: 'Jobid',
-            key: 'Jobid',
+            title: 'JobID',
+            dataIndex: 'JobID',
+            key: 'JobID',
         },
         {
             title: 'client',
@@ -126,7 +126,7 @@ const Dashboard = () => {
     const data = [
         {
             no: 1,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Inspection',
             phone: '098765555',
@@ -134,7 +134,7 @@ const Dashboard = () => {
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Pending',
             phone: '098765555',
@@ -142,7 +142,7 @@ const Dashboard = () => {
         },
         {
             no: 3,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
             status: 'New',
             phone: '098765555',
@@ -150,17 +150,17 @@ const Dashboard = () => {
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Complete',
+            status: 'Success',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Fixing',
             phone: '098765555',
             email: 'acc@gmail.com'
         }
@@ -169,31 +169,31 @@ const Dashboard = () => {
     const pendingData = [
         {
             no: 1,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Pending'
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Pending'
         },
         {
             no: 3,
-            Jobid: '246210513924920',
-            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            JobID: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Pending'
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Pending'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Pending'
         }
@@ -202,31 +202,31 @@ const Dashboard = () => {
     const closeData = [
         {
             no: 1,
-            Jobid: '246210513924920',
-            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            JobID: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Close Job'
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Close Job'
         },
         {
             no: 3,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
             status: 'Close Job'
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Close Job'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Close Job'
         }
@@ -235,31 +235,31 @@ const Dashboard = () => {
     const fixData = [
         {
             no: 1,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Fixing Job'
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Fixing Job'
         },
         {
             no: 3,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
             status: 'Fixing Job'
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Fixing Job'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Fixing Job'
         }
@@ -268,31 +268,31 @@ const Dashboard = () => {
     const disputeData = [
         {
             no: 1,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Dispute'
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
             status: 'Dispute'
         },
         {
             no: 3,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
             status: 'Dispute'
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Dispute'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Dispute'
         }

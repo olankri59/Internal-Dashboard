@@ -11,7 +11,7 @@ const { Option } = Select;
 const data1 = [
     {
         no: 1,
-        Jobid: '146210513924920',
+        JobID: '146210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         Atype: 'HQ',
         created: '23/04/2561',
@@ -23,7 +23,7 @@ const data1 = [
     },
     {
         no: 2,
-        Jobid: '146210513924920',
+        JobID: '146210513924920',
         client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
         Atype: 'N/A',
         created: '23/04/2561',
@@ -35,7 +35,7 @@ const data1 = [
     },
     {
         no: 3,
-        Jobid: '346210513924920',
+        JobID: '346210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
         phone: '098765555',
@@ -43,7 +43,7 @@ const data1 = [
     },
     {
         no: 4,
-        Jobid: '446210513924920',
+        JobID: '446210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -51,7 +51,7 @@ const data1 = [
     },
     {
         no: 5,
-        Jobid: '546210513924920',
+        JobID: '546210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
         phone: '098765555',
@@ -59,7 +59,7 @@ const data1 = [
     },
     {
         no: 6,
-        Jobid: '646210513924920',
+        JobID: '646210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -67,7 +67,7 @@ const data1 = [
     },
     {
         no: 7,
-        Jobid: '246210513924920',
+        JobID: '246210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -75,7 +75,7 @@ const data1 = [
     },
     {
         no: 8,
-        Jobid: '846210513924920',
+        JobID: '846210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -83,7 +83,7 @@ const data1 = [
     },
     {
         no: 9,
-        Jobid: '946210513924920',
+        JobID: '946210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
         phone: '098765555',
@@ -91,7 +91,7 @@ const data1 = [
     },
     {
         no: 10,
-        Jobid: '046210513924920',
+        JobID: '046210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -101,7 +101,7 @@ const data1 = [
 const data2 = [
     {
         no: 11,
-        Jobid: '146210513924920',
+        JobID: '146210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -109,7 +109,7 @@ const data2 = [
     },
     {
         no: 12,
-        Jobid: '246210513924920',
+        JobID: '246210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Pending',
         phone: '098765432',
@@ -117,7 +117,7 @@ const data2 = [
     },
     {
         no: 13,
-        Jobid: '346210513924920',
+        JobID: '346210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -125,7 +125,7 @@ const data2 = [
     },
     {
         no: 14,
-        Jobid: '446210513924920',
+        JobID: '446210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098234555',
@@ -133,7 +133,7 @@ const data2 = [
     },
     {
         no: 15,
-        Jobid: '546210513924920',
+        JobID: '546210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
         phone: '098154555',
@@ -141,7 +141,7 @@ const data2 = [
     },
     {
         no: 16,
-        Jobid: '646210513924920',
+        JobID: '646210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098723455',
@@ -149,7 +149,7 @@ const data2 = [
     },
     {
         no: 17,
-        Jobid: '746210513924920',
+        JobID: '746210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765444',
@@ -157,7 +157,7 @@ const data2 = [
     },
     {
         no: 18,
-        Jobid: '846210513924920',
+        JobID: '846210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098432555',
@@ -165,7 +165,7 @@ const data2 = [
     },
     {
         no: 19,
-        Jobid: '946210513924920',
+        JobID: '946210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
@@ -173,7 +173,7 @@ const data2 = [
     },
     {
         no: 20,
-        Jobid: '1046210513924920',
+        JobID: '1046210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
         phone: '098432555',
@@ -183,9 +183,9 @@ const data2 = [
 
 const tasksColumns = [
     {
-        title: 'Jobid',
-        dataIndex: 'Jobid',
-        key: 'Jobid',
+        title: 'JobID',
+        dataIndex: 'JobID',
+        key: 'JobID',
     },
     {
         title: 'client',

@@ -1,4 +1,4 @@
-import { Layout, Row, Card, Button, Col, Table } from 'antd';
+import { Layout, Row, Card, Button,Col } from 'antd';
 import React from 'react'
 import { RightOutlined, LogoutOutlined } from '@ant-design/icons';
 import QuotationDetail from '../Page/BUCR/QuotationDetail'
@@ -29,9 +29,9 @@ const columns = [
         key: 'no',
     },
     {
-        title: 'Jobid',
-        dataIndex: 'Jobid',
-        key: 'Jobid',
+        title: 'JobID',
+        dataIndex: 'JobID',
+        key: 'JobID',
     },
     {
         title: 'client',
@@ -56,18 +56,53 @@ const columns = [
 ];
 
 class CardTable extends React.Component {
-
     render() {
         return (
             <Card>
                 <h1>{this.props.title}</h1>
-                <Table dataSource={this.props.data} columns={this.props.columns} rowClassName="row-container" />
+                <div className={(this.props.isDashboard) ? 'table-container-dashboard' : 'table-container'}>
+                    
+                        <Card style={{
+                            marginTop: '5px',
+                            marginBottom: '-6px',
+                            borderTopLeftRadius: '10px',
+                            borderTopRightRadius: '10px',
+                            backgroundColor: 'black',
+                            color: 'white'
+                        }}>
+                            <Row justify='space-between'>
+                                <Col>เลขงาน</Col>
+                                <Col>ประเภทงาน</Col>
+                                <Col>ชื่อลูกค้า</Col>
+                                <Col>สาขา</Col>
+                                <Col>วันที่สร้าง</Col>
+                                <Col>วันที่บริการ</Col>
+                                <Col>สถานะ</Col>
+                            </Row>
+                        </Card>
+                    {
+                        this.props.data.map((t, index) => { 
+                            return (
+                                // index < 10 ?
+                                <Card style={{ marginTop: '5px' }}>
+                                    <Row justify='space-between' style={{ textAlign: 'left'}}>
+                                        <div className="title-card" >
+                                            {`${t.JobID ? t.JobID : ''} ${t.Taskstype ? t.Taskstype : ''} ${t.client ? t.client : ''} ${t.Atype ? t.Atype : ''} ${t.created ? t.created : ''} ${t.screated ? t.screated : ''} ${t.price ? t.price : ''} ${t.status ? t.status : ''} ${t.cphone ? t.cphone : ''}  ${this.props.isPrending ? t.status2 : ''}`}
+                                            </div>
+                                        <a href='QuotationDetail'><RightOutlined style={{ color: 'black' }} /></a>
+                                    </Row>
+                                </Card>
+                                // : null
+                            )
+                        })
+                    }
+                </div>
                 {
-                    (this.props.isDashboard) ?
-                        <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href={this.props.path} type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
-                        </Row>
-                        : null
+                (this.props.isDashboard) ?
+                <Row style={{justifyContent: 'flex-end', paddingTop:'20px'}} >
+                    <Button href={this.props.path} type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                </Row>
+                : null
                 }
             </Card>
         );
