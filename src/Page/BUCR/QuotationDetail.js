@@ -2,8 +2,6 @@ import { Row, Select, DatePicker, Col, Card } from 'antd'
 import React from 'react'
 import './QuotationDetail.css'
 
-
-
 const { RangePicker } = DatePicker;
 
 const QuotationDetail = () => {

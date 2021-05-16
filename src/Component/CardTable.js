@@ -15,14 +15,18 @@ class CardTable extends React.Component {
                 <h1>{this.props.title}</h1>
                 <div className={(this.props.isDashboard) ? 'table-container-dashboard' : 'table-container'}>
                     {
-                        this.props.data.map((t) => {
+                        this.props.data.map((t, index) => { 
                             return (
-                                <Card style={{ marginTop: '10px' }}>
+                                // index < 10 ?
+                                <Card style={{ marginTop: '5px' }}>
                                     <Row justify='space-between'>
-                                        <div className="title-card">{`${this.props.title} ${t.no}#`}</div>
+                                        <div className="title-card" >
+                                            {`${t.Jobid ? t.Jobid : ''} ${t.Taskstype ? t.Taskstype : ''} ${t.client ? t.client : ''} ${t.Atype ? t.Atype : ''} ${t.created ? t.created : ''} ${t.screated ? t.screated : ''} ${t.status ? t.status : ''} ${this.props.isPrending ? t.status2 : ''}`}
+                                            </div>
                                         <a href='QuotationDetail'><RightOutlined style={{ color: 'black' }} /></a>
                                     </Row>
                                 </Card>
+                                // : null
                             )
                         })
                     }

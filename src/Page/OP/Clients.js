@@ -1,6 +1,6 @@
 import { Card, Row, DatePicker, Select, Col,Pagination } from "antd";
 import React from "react";
-import './Quotation.css';
+import './Clients.css';
 import CardTable from '../../Component/CardTable'
 
 const { Option } = Select;
@@ -97,9 +97,9 @@ const data1 = [
 
 const { RangePicker } = DatePicker;
 
-const Quotation = () => {
+const Clients = () => {
     return (
-        <div className='Quotation-page'>
+        <div className='Clients-page'>
             <Row className="search-container" gutter={20}>
                 <Col>
                     <RangePicker />
@@ -107,18 +107,18 @@ const Quotation = () => {
                 <Col>
                     <Select
                         style={{ width: '150px' }}
-                        placeholder='Status'
+                        placeholder='#'
                         filterOption={(input, option) =>
                             option.toLowerCase().indexOf(input.toLowerCase()) >= 0
                         }
                     >
-                        <Option key="service_1" value="1">Draft</Option>
-                        <Option key="service_2" value="2">Pending</Option>
-                        <Option key="service_3" value="3">Paid</Option>
+                        <Option key="service_1" value="1">ล้างแอร์ติดผนัง</Option>
+                        <Option key="service_2" value="2">บริการแก้ไขท่อตัน</Option>
+                        <Option key="service_3" value="3">เปลี่ยนหลอดไฟ</Option>
                     </Select>
                 </Col>
             </Row>
-            <CardTable title='Quotation' data={data1} />
+            <CardTable title='Clients' data={data1} />
             <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
                 <Pagination defaultCurrent={1} total={50} />
             </Row>
@@ -126,4 +126,4 @@ const Quotation = () => {
     )
 }
 
-export default Quotation
+export default Clients

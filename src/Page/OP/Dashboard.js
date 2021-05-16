@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    Row, Col, Card,DatePicker,Select
+    Row, Col, Card, DatePicker, Select, Button
 } from 'antd';
 import './Dashboard.css'
 import { Chart } from "react-charts";
@@ -67,44 +67,87 @@ const Dashboard = () => {
         []
     );
 
-    const cilentData = [
+    const data2 = [
         {
             no: 1,
-            client: 'AA',
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Inspection',
+            status2: 'Pending',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 2,
-            client: 'AA',
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
+            status: 'Inspection',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 3,
-            client: 'AA',
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            status: 'Inspection',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 4,
-            client: 'AA',
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Inspection',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 5,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Inspection',
+            phone: '098765555',
+            email: 'acc@gmail.com'
+        },
+        {
+            no: 6,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Inspection',
+            phone: '098765555',
+            email: 'acc@gmail.com'
+        },
+        {
+            no: 7,
             client: 'AA',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
+        {
+            no: 8,
+            client: 'AA',
+            phone: '098765555',
+            email: 'acc@gmail.com'
+        },
+        {
+            no: 9,
+            client: 'AA',
+            phone: '098765555',
+            email: 'acc@gmail.com'
+        },
+        {
+            no: 10,
+            client: 'AA',
+            phone: '098765555',
+            email: 'acc@gmail.com'
+        }
     ]
     const { RangePicker } = DatePicker;
     const { Option } = Select;
 
     return (
         <div className="dashboard-page">
-             <Row className="search-container" gutter={20}>
+            <Row className="search-container" gutter={20}>
                 <Col>
                     <RangePicker />
                 </Col>
@@ -122,7 +165,7 @@ const Dashboard = () => {
                         <Option key="service_4" value="4">Work Confirm</Option>
                         <Option key="service_5" value="5">In Progress</Option>
                         <Option key="service_6" value="6">Complete</Option>
-                        <Option key="service_7" value="7">Dispute</Option>
+                        <Option key="service_7" value="7" style={{color:'red'}}>Dispute</Option>
                     </Select>
                 </Col>
                 <Col>
@@ -133,9 +176,11 @@ const Dashboard = () => {
                             option.toLowerCase().indexOf(input.toLowerCase()) >= 0
                         }
                     >
-                        <Option key="service_1" value="1">ID#1</Option>
-                        <Option key="service_2" value="2">ID#2</Option>
-                        <Option key="service_3" value="3">ID#3</Option>
+                        <Option key="service_1" value="1">Ag001</Option>
+                        <Option key="service_2" value="2">Ag002</Option>
+                        <Option key="service_3" value="3">Ag003</Option>
+                        <Option key="service_3" value="3">Ag004</Option>
+                        <Option key="service_3" value="3">Ag005</Option>
                     </Select>
                 </Col>
                 <Col>
@@ -164,31 +209,74 @@ const Dashboard = () => {
                         <Option key="service_3" value="3">Paid</Option>
                     </Select>
                 </Col>
+                <Col>
+                    <Select
+                        style={{ width: '150px' }}
+                        placeholder='Customer'
+                        filterOption={(input, option) =>
+                            option.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        }
+                    >
+                        <Option key="service_1" value="1">บริษัท พฤกษา เรียลเอสเตท จํากัด</Option>
+                        <Option key="service_2" value="2">ประวิตร วงษ์สุวรรณ</Option>
+                        <Option key="service_3" value="3">นาย ประยุทธ์ จันทร์โอชา</Option>
+                    </Select>
+                </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '40px' }}>
+            <Row>
+                <Col style={{paddingRight: '10px'}}>
+                    <Button>Total Tasks: 12,032</Button>
+                </Col>
+                <Col style={{paddingRight: '10px'}}>
+                    <Button>Total Revenue: 122,323</Button>
+                </Col>
+                <Col style={{paddingRight: '10px'}}>
+                    <Button>Total New Clients: 120</Button>
+                </Col>
+                <Col style={{paddingRight: '10px'}}>
+                    <Button>Total Quotation: 120</Button>
+                </Col>
+            </Row>
+            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
                 <Col>
                     <Card className="card-container">
-                        <div style={{ marginBottom: '10px' }}>Total Number of Clients Per Month</div>
+                        <div style={{ marginBottom: '10px' }}><h2>Amount of success rate tasks</h2></div>
                         <div className="graph">
                             <Chart data={data} axes={axes} series={series} />
                         </div>
                     </Card>
                 </Col>
                 <Col className="op-task-table">
-                    <CardTable title='Task' data={cilentData} isDashboard={true} path='/OP/Tasks'/>
+                    <CardTable title='Task' data={data2} isDashboard={true} path='/OP/Tasks' />
                 </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '40px' }}>
+            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Clients' data={cilentData} isDashboard={true}  path='/OP/Client'/>
+                    <CardTable title='Clients' data={data2} isDashboard={true} path='/OP/Clients' />
                 </Col>
                 <Col>
                     <Card className="card-container">
-                        <div style={{ marginBottom: '10px' }}>Total Number of Clients Per Month</div>
+                        <div style={{ marginBottom: '10px' }}><h2>Revenue of each agents</h2></div>
                         <div className="graph">
-                            <Chart data={data} axes={axes2}  />
+                            <Chart data={data} axes={axes2} />
                         </div>
                     </Card>
+                </Col>
+            </Row>
+            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+                <Col className="op-task-table">
+                    <CardTable title='Job Pending' isPending={true} data={data2} isDashboard={true} path='/OP/Client' />
+                </Col>
+                <Col className="op-task-table">
+                    <CardTable title='Closed Job' data={data2} isDashboard={true} path='/OP/Client' />
+                </Col>
+            </Row>
+            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+                <Col className="op-task-table">
+                    <CardTable title='Fixing Job'  data={data2} isDashboard={true} path='/OP/Client' />
+                </Col>
+                <Col className="op-task-table">
+                    <CardTable title='Dispute Job'  data={data2} isDashboard={true} path='/OP/Client' />
                 </Col>
             </Row>
         </div>
