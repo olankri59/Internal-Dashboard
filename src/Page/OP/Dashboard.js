@@ -1,15 +1,17 @@
 import React from "react";
 import {
-    Row, Col, Card, DatePicker, Select, Button
+    Row, Col, Card, DatePicker, Select, Button, Table
 } from 'antd';
 import './Dashboard.css'
 import { Chart } from "react-charts";
 import CardTable from '../../Component/CardTable'
+import { LogoutOutlined } from '@ant-design/icons';
+
 
 const Dashboard = () => {
     //   useLagRadar();
 
-    const data = React.useMemo(
+    const graphData = React.useMemo(
         () => [
             {
                 label: 'Series 1',
@@ -67,13 +69,66 @@ const Dashboard = () => {
         []
     );
 
-    const data2 = [
+    const tasksColumns = [
+        {
+            title: 'Jobid',
+            dataIndex: 'Jobid',
+            key: 'Jobid',
+        },
+        {
+            title: 'client',
+            dataIndex: 'client',
+            key: 'client',
+        },
+        {
+            title: 'status',
+            dataIndex: 'status',
+            key: 'status',
+        }
+    ];
+
+    const clientColumns = [
+        {
+            title: 'Jobid',
+            dataIndex: 'Jobid',
+            key: 'Jobid',
+        },
+        {
+            title: 'client',
+            dataIndex: 'client',
+            key: 'client',
+        },
+        {
+            title: 'phone',
+            dataIndex: 'phone',
+            key: 'phone',
+        }
+    ];
+
+    const statusColumns = [
+        {
+            title: 'Jobid',
+            dataIndex: 'Jobid',
+            key: 'Jobid',
+        },
+        {
+            title: 'client',
+            dataIndex: 'client',
+            key: 'client',
+        },
+        {
+            title: 'status',
+            dataIndex: 'status',
+            key: 'status',
+        }
+    ];
+
+    const data = [
         {
             no: 1,
             Jobid: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Inspection',
-            status2: 'Pending',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
@@ -81,7 +136,7 @@ const Dashboard = () => {
             no: 2,
             Jobid: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Pending',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
@@ -89,7 +144,7 @@ const Dashboard = () => {
             no: 3,
             Jobid: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'New',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
@@ -97,7 +152,7 @@ const Dashboard = () => {
             no: 4,
             Jobid: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Complete',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
@@ -108,40 +163,141 @@ const Dashboard = () => {
             status: 'Inspection',
             phone: '098765555',
             email: 'acc@gmail.com'
-        },
-        {
-            no: 6,
-            Jobid: '246210513924920',
-            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Inspection',
-            phone: '098765555',
-            email: 'acc@gmail.com'
-        },
-        {
-            no: 7,
-            client: 'AA',
-            phone: '098765555',
-            email: 'acc@gmail.com'
-        },
-        {
-            no: 8,
-            client: 'AA',
-            phone: '098765555',
-            email: 'acc@gmail.com'
-        },
-        {
-            no: 9,
-            client: 'AA',
-            phone: '098765555',
-            email: 'acc@gmail.com'
-        },
-        {
-            no: 10,
-            client: 'AA',
-            phone: '098765555',
-            email: 'acc@gmail.com'
         }
     ]
+
+    const pendingData = [
+        {
+            no: 1,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Pending'
+        },
+        {
+            no: 2,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
+            status: 'Pending'
+        },
+        {
+            no: 3,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            status: 'Pending'
+        },
+        {
+            no: 4,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Pending'
+        },
+        {
+            no: 5,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Pending'
+        }
+    ]
+
+    const closeData = [
+        {
+            no: 1,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Close Job'
+        },
+        {
+            no: 2,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
+            status: 'Close Job'
+        },
+        {
+            no: 3,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            status: 'Close Job'
+        },
+        {
+            no: 4,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Close Job'
+        },
+        {
+            no: 5,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Close Job'
+        }
+    ]
+
+    const fixData = [
+        {
+            no: 1,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Fixing Job'
+        },
+        {
+            no: 2,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
+            status: 'Fixing Job'
+        },
+        {
+            no: 3,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            status: 'Fixing Job'
+        },
+        {
+            no: 4,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Fixing Job'
+        },
+        {
+            no: 5,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Fixing Job'
+        }
+    ]
+
+    const disputeData = [
+        {
+            no: 1,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Dispute'
+        },
+        {
+            no: 2,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
+            status: 'Dispute'
+        },
+        {
+            no: 3,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
+            status: 'Dispute'
+        },
+        {
+            no: 4,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Dispute'
+        },
+        {
+            no: 5,
+            Jobid: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Dispute'
+        }
+    ]
+
     const { RangePicker } = DatePicker;
     const { Option } = Select;
 
@@ -165,7 +321,7 @@ const Dashboard = () => {
                         <Option key="service_4" value="4">Work Confirm</Option>
                         <Option key="service_5" value="5">In Progress</Option>
                         <Option key="service_6" value="6">Complete</Option>
-                        <Option key="service_7" value="7" style={{color:'red'}}>Dispute</Option>
+                        <Option key="service_7" value="7" style={{ color: 'red' }}>Dispute</Option>
                     </Select>
                 </Col>
                 <Col>
@@ -224,59 +380,94 @@ const Dashboard = () => {
                 </Col>
             </Row>
             <Row>
-                <Col style={{paddingRight: '10px'}}>
+                <Col style={{ paddingRight: '10px' }}>
                     <Button>Total Tasks: 12,032</Button>
                 </Col>
-                <Col style={{paddingRight: '10px'}}>
+                <Col style={{ paddingRight: '10px' }}>
                     <Button>Total Revenue: 122,323</Button>
                 </Col>
-                <Col style={{paddingRight: '10px'}}>
+                <Col style={{ paddingRight: '10px' }}>
                     <Button>Total New Clients: 120</Button>
                 </Col>
-                <Col style={{paddingRight: '10px'}}>
+                <Col style={{ paddingRight: '10px' }}>
                     <Button>Total Quotation: 120</Button>
                 </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+            <Row justify='space-around' style={{ padding: '20px', textAlign: 'center' }}>
                 <Col>
                     <Card className="card-container">
                         <div style={{ marginBottom: '10px' }}><h2>Amount of success rate tasks</h2></div>
                         <div className="graph">
-                            <Chart data={data} axes={axes} series={series} />
+                            <Chart data={graphData} axes={axes} series={series} />
                         </div>
                     </Card>
                 </Col>
                 <Col className="op-task-table">
-                    <CardTable title='Task' data={data2} isDashboard={true} path='/OP/Tasks' />
+                    <Card>
+                        <h1>Tasks</h1>
+                        <Table dataSource={data} columns={tasksColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>
                 </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+            <Row justify='space-around' style={{ padding: '20px', textAlign: 'center' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Clients' data={data2} isDashboard={true} path='/OP/Clients' />
+                    <Card>
+                        <h1>Clients</h1>
+                        <Table dataSource={data} columns={clientColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>
                 </Col>
                 <Col>
                     <Card className="card-container">
                         <div style={{ marginBottom: '10px' }}><h2>Revenue of each agents</h2></div>
                         <div className="graph">
-                            <Chart data={data} axes={axes2} />
+                            <Chart data={graphData} axes={axes2} />
                         </div>
                     </Card>
                 </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+            <Row justify='space-around' style={{ padding: '20px', textAlign: 'center' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Job Pending' isPending={true} data={data2} isDashboard={true} path='/OP/Client' />
+                    <Card>
+                        <h1>Job Pending</h1>
+                        <Table dataSource={pendingData} columns={statusColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>
                 </Col>
                 <Col className="op-task-table">
-                    <CardTable title='Closed Job' data={data2} isDashboard={true} path='/OP/Client' />
+                    <Card>
+                        <h1>Close job</h1>
+                        <Table dataSource={closeData} columns={statusColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>
                 </Col>
             </Row>
-            <Row justify='space-around' style={{ padding: '20px',textAlign:'center' }}>
+            <Row justify='space-around' style={{ padding: '20px', textAlign: 'center' }}>
                 <Col className="op-task-table">
-                    <CardTable title='Fixing Job'  data={data2} isDashboard={true} path='/OP/Client' />
-                </Col>
+                    <Card>
+                        <h1>Fixing job</h1>
+                        <Table dataSource={fixData} columns={statusColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>                </Col>
                 <Col className="op-task-table">
-                    <CardTable title='Dispute Job'  data={data2} isDashboard={true} path='/OP/Client' />
+                    <Card>
+                        <h1>Dispute Job</h1>
+                        <Table dataSource={disputeData} columns={statusColumns} pagination={false} showHeader={false} />
+                        <Row style={{ justifyContent: 'flex-end' }} >
+                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                        </Row>
+                    </Card>
                 </Col>
             </Row>
         </div>

@@ -15,6 +15,7 @@ import BQuotationDetail from './Page/BUCR/QuotationDetail';
 import BPurchaseOrder from './Page/BUCR/PurchaseOrder';
 import ODashboard from './Page/OP/Dashboard';
 import OTasks from './Page/OP/Tasks';
+import OTasksDetail from './Page/OP/TasksDetail';
 import OQuotation from './Page/OP/Quotation';
 import OClients from './Page/OP/Clients';
 
@@ -41,6 +42,7 @@ function App() {
               <Route exact path='/BUCR/PurchaseOrder' component={BPurchaseOrder} />
               <Route exact path='/OP/Dashboard' component={ODashboard} />
               <Route exact path='/OP/Tasks' component={OTasks} />
+              <Route exact path='/OP/TasksDetail' component={OTasksDetail} />
               <Route exact path='/OP/Quotation' component={OQuotation} />
               <Route exact path='/OP/Clients' component={OClients} />
             </Switch>

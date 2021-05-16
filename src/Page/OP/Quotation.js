@@ -1,4 +1,4 @@
-import { Card, Row, DatePicker, Select, Col,Pagination } from "antd";
+import { Card, Row, DatePicker, Select, Col,Pagination, Table } from "antd";
 import React from "react";
 import './Quotation.css';
 import CardTable from '../../Component/CardTable'
@@ -95,6 +95,34 @@ const data1 = [
     }
 ]
 
+const quotaionColumns = [
+    {
+        title: 'Jobid',
+        dataIndex: 'Jobid',
+        key: 'Jobid',
+    },
+    {
+        title: 'client',
+        dataIndex: 'client',
+        key: 'client',
+    },
+    {
+        title: 'status',
+        dataIndex: 'status',
+        key: 'status',
+    },
+    {
+        title: 'phone',
+        dataIndex: 'phone',
+        key: 'phone',
+    },
+    {
+        title: 'email',
+        dataIndex: 'email',
+        key: 'email',
+    },
+];
+
 const { RangePicker } = DatePicker;
 
 const Quotation = () => {
@@ -118,7 +146,7 @@ const Quotation = () => {
                     </Select>
                 </Col>
             </Row>
-            <CardTable title='Quotation' data={data1} />
+            <Table dataSource={data1} columns={quotaionColumns} pagination={false}/>
             <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
                 <Pagination defaultCurrent={1} total={50} />
             </Row>

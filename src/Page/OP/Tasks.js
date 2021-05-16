@@ -1,7 +1,8 @@
-import { Card, Row, DatePicker, Select, Col, Pagination } from "antd";
+import { Card, Row, DatePicker, Select, Col, Pagination, Table } from "antd";
 import './Tasks.css';
 import CardTable from '../../Component/CardTable'
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 
 
 const { Option } = Select;
@@ -104,15 +105,15 @@ const data2 = [
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
-        email: 'acc@gmail.com'
+        email: 'aaa@gmail.com'
     },
     {
         no: 12,
         Jobid: '246210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
-        status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        status: 'Pending',
+        phone: '098765432',
+        email: 'bbb@gmail.com'
     },
     {
         no: 13,
@@ -120,47 +121,47 @@ const data2 = [
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
         phone: '098765555',
-        email: 'acc@gmail.com'
+        email: 'ccc@gmail.com'
     },
     {
         no: 14,
         Jobid: '446210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        phone: '098234555',
+        email: 'ddd@gmail.com'
     },
     {
         no: 15,
         Jobid: '546210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        phone: '098154555',
+        email: 'eee@gmail.com'
     },
     {
         no: 16,
         Jobid: '646210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        phone: '098723455',
+        email: 'fff@gmail.com'
     },
     {
         no: 17,
         Jobid: '746210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        phone: '098765444',
+        email: 'ggg@gmail.com'
     },
     {
         no: 18,
         Jobid: '846210513924920',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
         status: 'Inspection',
-        phone: '098765555',
-        email: 'acc@gmail.com'
+        phone: '098432555',
+        email: 'eee@gmail.com'
     },
     {
         no: 19,
@@ -175,25 +176,61 @@ const data2 = [
         Jobid: '1046210513924920',
         client: 'บริษัท เมเจอร์ ดีเวลลอปเม้นท์ จำกัด (มหาชน)',
         status: 'Inspection',
-        phone: '098765555',
+        phone: '098432555',
         email: 'acc@gmail.com'
     }
 ]
 
+const tasksColumns = [
+    {
+        title: 'Jobid',
+        dataIndex: 'Jobid',
+        key: 'Jobid',
+    },
+    {
+        title: 'client',
+        dataIndex: 'client',
+        key: 'client',
+    },
+    {
+        title: 'status',
+        dataIndex: 'status',
+        key: 'status',
+    },
+    {
+        title: 'phone',
+        dataIndex: 'phone',
+        key: 'phone',
+    },
+    {
+        title: 'email',
+        dataIndex: 'email',
+        key: 'email',
+    },
+];
+
 const Tasks = () => {
-    const [page, setPage] = useState(1)
+
+    const history = useHistory()
+
+    const [pageSate, setPageState] = useState({
+        page: 1,
+        size: 10
+    })
     const [tasks, setTasks] = useState(data1)
 
     useEffect(() => {
-        switch (page) {
-            case 1:
+        // const result = task.getTask({page: pageSate.page, size: pageSate.size})
+       
+        switch (pageSate.page % 2) {
+            case 0:
                 setTasks(data1)
                 break;
-            case 2:
+            case 1:
                 setTasks(data2)
                 break;
         }
-    }, [page])
+    }, [pageSate])
 
 
     return (
@@ -216,18 +253,38 @@ const Tasks = () => {
                         <Option key="service_4" value="4">Work Confirm</Option>
                         <Option key="service_5" value="5">In Progress</Option>
                         <Option key="service_6" value="6">Complete</Option>
-                        <Option key="service_7" value="7" style={{color:'red'}}>Dispute</Option>
+                        <Option key="service_7" value="7" style={{ color: 'red' }}>Dispute</Option>
                     </Select>
                 </Col>
             </Row>
-            <CardTable title='Tasks' data={tasks} />
+            <Table
+                dataSource={tasks}
+                columns={tasksColumns}
+                pagination={false}
+                onRow={(record, index) => {
+                    return {
+                        onClick: (e) => {
+                            history.push(`/OP/TasksDetail`, {
+                                detail: record
+                            })
+                        }
+                    }
+                }
+
+                }
+            />
             <Row style={{ justifyContent: 'flex-end', padding: '20px' }}>
                 <Pagination
                     total={53}
                     showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
                     defaultPageSize={10}
                     defaultCurrent={1}
-                    onChange={(value) => { setPage(value) }}
+                    onChange={(value, size) => {
+                        setPageState({
+                            page: value,
+                            size: size
+                        })
+                    }}
                 />
             </Row>
         </div>
