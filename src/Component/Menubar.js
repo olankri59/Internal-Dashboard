@@ -63,7 +63,7 @@ class Menubar extends React.Component {
                                 <Link to={'/OP/Quotation'}>Quotation</Link>
                             </Menu.Item>
                             <Menu.Item key="OP_4" icon={<UserOutlined />}>
-                                Client
+                                <Link to={'/OP/Clients'}>Clients</Link>
                             </Menu.Item>
                             <Menu.Item key="OP_5" icon={<ToolOutlined />}>
                                 Agent

@@ -16,7 +16,7 @@ const Dashboard = () => {
                 data: [
                     { primary: 1, secondary: 10 },
                     { primary: 2, secondary: 15 },
-                    { primary: 3, secondary: 7 },
+                    { primary: 3, secondary: 2 },
                 ],
             },
             {
@@ -70,24 +70,23 @@ const Dashboard = () => {
     const data2 = [
         {
             no: 1,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Inspection',
-            status2: 'Pending',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 2,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Pending',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 3,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา3 เรียลเอสเตท จํากัด',
             status: 'Inspection',
             phone: '098765555',
@@ -95,23 +94,23 @@ const Dashboard = () => {
         },
         {
             no: 4,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Success',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 5,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-            status: 'Inspection',
+            status: 'Fixing',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
         {
             no: 6,
-            Jobid: '246210513924920',
+            JobID: '246210513924920',
             client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
             status: 'Inspection',
             phone: '098765555',
@@ -119,7 +118,9 @@ const Dashboard = () => {
         },
         {
             no: 7,
-            client: 'AA',
+            JobID: '246210513924920',
+            client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
+            status: 'Dispute',
             phone: '098765555',
             email: 'acc@gmail.com'
         },
