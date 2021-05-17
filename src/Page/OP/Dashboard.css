@@ -11,10 +11,14 @@
 
 .graph {
     width: 470px;
-    height: 329px;
+    height: 335px;
     background-color: white;
 }
 
 .op-task-table {
-    width: 540px;
+    width: 550px;
+}
+
+.button{
+    margin-top: 20px;
 }

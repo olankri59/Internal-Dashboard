@@ -11,26 +11,31 @@ const { Option } = Select;
 const data1 = [
     {
         no: 1,
-        JobID: '146210513924920',
+        JobID: '2401994294202',
         client: 'บริษัท พฤกษา เรียลเอสเตท จํากัด',
-        Atype: 'HQ',
+        branch: 'HQ',
+        atype: 'Home',
         created: '23/04/2561',
         screated: '28/04/2561',
         Taskstype: 'งานแอร์',
+        servicecat: 'ล้างแอร์',
         status: 'Inspection',
         phone: '098765555',
+        address:'Bangkok',
         email: 'acc@gmail.com'
     },
     {
         no: 2,
         JobID: '146210513924920',
         client: 'บริษัท พฤกษา2 เรียลเอสเตท จํากัด',
-        Atype: 'N/A',
+        branch: 'N/A',
+        atype: 'Condo',
         created: '23/04/2561',
         screated: '28/04/2561',
         Taskstype: 'งานแอร์',
         status: 'Inspection',
         phone: '098765555',
+        address:'Bangkok Bangkok Bangkok Bangkok',
         email: 'acc@gmail.com'
     },
     {
@@ -188,26 +193,38 @@ const tasksColumns = [
         key: 'JobID',
     },
     {
+        title: 'Taskstype',
+        dataIndex: 'Taskstype',
+        key: 'Taskstype',
+    },
+    {
         title: 'client',
         dataIndex: 'client',
         key: 'client',
+    },
+    {
+        title: 'branch',
+        dataIndex: 'branch',
+        key: 'branch',
+    },
+    {
+        title: 'created',
+        dataIndex: 'created',
+        key: 'created',
+    },
+    {
+        title: 'servicedate',
+        dataIndex: 'screated',
+        key: 'screated',
     },
     {
         title: 'status',
         dataIndex: 'status',
         key: 'status',
     },
-    {
-        title: 'phone',
-        dataIndex: 'phone',
-        key: 'phone',
-    },
-    {
-        title: 'email',
-        dataIndex: 'email',
-        key: 'email',
-    },
 ];
+
+const { RangePicker } = DatePicker;
 
 const Tasks = () => {
 
@@ -224,10 +241,10 @@ const Tasks = () => {
        
         switch (pageSate.page % 2) {
             case 0:
-                setTasks(data1)
+                setTasks(data2)
                 break;
             case 1:
-                setTasks(data2)
+                setTasks(data1)
                 break;
         }
     }, [pageSate])
@@ -237,7 +254,7 @@ const Tasks = () => {
         <div className='tasks-page'>
             <Row className="search-container" gutter={20}>
                 <Col>
-                    <DatePicker />
+                    <RangePicker />
                 </Col>
                 <Col>
                     <Select

@@ -407,7 +407,7 @@ const Dashboard = () => {
                         <h1>Tasks</h1>
                         <Table dataSource={data} columns={tasksColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button className='button' href='/OP/Tasks' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
                     </Card>
                 </Col>
@@ -418,7 +418,7 @@ const Dashboard = () => {
                         <h1>Clients</h1>
                         <Table dataSource={data} columns={clientColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button className='button' href='/OP/Clients' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
                     </Card>
                 </Col>
@@ -437,7 +437,7 @@ const Dashboard = () => {
                         <h1>Job Pending</h1>
                         <Table dataSource={pendingData} columns={statusColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button href='' className='button' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
                     </Card>
                 </Col>
@@ -446,7 +446,7 @@ const Dashboard = () => {
                         <h1>Close job</h1>
                         <Table dataSource={closeData} columns={statusColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button href='' className='button' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
                     </Card>
                 </Col>
@@ -457,15 +457,16 @@ const Dashboard = () => {
                         <h1>Fixing job</h1>
                         <Table dataSource={fixData} columns={statusColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button href='' className='button' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
-                    </Card>                </Col>
+                    </Card>                
+                </Col>
                 <Col className="op-task-table">
                     <Card>
                         <h1>Dispute Job</h1>
                         <Table dataSource={disputeData} columns={statusColumns} pagination={false} showHeader={false} />
                         <Row style={{ justifyContent: 'flex-end' }} >
-                            <Button href='' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
+                            <Button href='' className='button' type="primary" shape="round" icon={<LogoutOutlined />} size={'small'}>More</Button>
                         </Row>
                     </Card>
                 </Col>

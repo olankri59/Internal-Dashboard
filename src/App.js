@@ -18,6 +18,9 @@ import OTasks from './Page/OP/Tasks';
 import OTasksDetail from './Page/OP/TasksDetail';
 import OQuotation from './Page/OP/Quotation';
 import OClients from './Page/OP/Clients';
+import OClientsdetail from './Page/OP/Clientsdetail';
+import OQuotationdetail from './Page/OP/Quotationdetail';
+// import OAgent from './Page/OP/Agent';
 
 
 
@@ -45,6 +48,9 @@ function App() {
               <Route exact path='/OP/TasksDetail' component={OTasksDetail} />
               <Route exact path='/OP/Quotation' component={OQuotation} />
               <Route exact path='/OP/Clients' component={OClients} />
+              <Route exact path='/OP/Clientsdetail' component={OClientsdetail} />
+              <Route exact path='/OP/Quotationdetail' component={OQuotationdetail} />
+              {/* <Route exact path='/OP/Agent' component={OAgent} /> */}
             </Switch>
           </div>
         </Col>
